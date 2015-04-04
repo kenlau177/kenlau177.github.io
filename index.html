@@ -122,9 +122,55 @@
             Fitting a linear regression to a set of data can be easily carried out with R or Python. It is almost routine to just import the data and run a simple function such as lm in R. However, if the data is in the size of terabytes, forget about R as we cannot even import the data using a standard laptop of 8 Gb of memory. The solution is to use Hadoop and map-reduce which provide a way to process big data very efficiently. This presentation provides an introduction to Hadoop and map-reduce, and a guide to running a pseudo-distributed environment as well as on a cluster in AWS. 
 
             Compiled from a combination of notes from online classes, blogs, tutorials, ... etc.
+            Complements of....
 
-            <h3>VM preparation</h3>
-            For windows users, download the following ubuntu linux image in order to use linux.
+            <h3>Preparation for the seminar</h3>
+
+            <h4>Virual machine (VM) preparation:</h4>
+            If you are using a linux or mac, then you should be good to go. However, if you are using windows, then you should prepare linux using a virtual machine (VM) by using <<a href="https://www.virtualbox.org/wiki/Downloads">Virtual Box</a>. When you download Virtual Box, you don't immediately get linux, instead you need to download linux separately. 
+
+            The following is a download link to a linux ubuntu 12.04 32-bit image that will get you running linux on a Virtual Box.
+            
+            <p><a href="https://spark-public.s3.amazonaws.com/datasci/Coursera-Data-Science-Ubuntu.ova">Linux Ubuntu Image</a></p>
+
+            Once you have downloaded this file, you should unzip it. You should then notice a file that ends with .vmdk in the same directory. 
+
+            <h4>Sign up for an AWS account</h4>
+            Sign up for your <a href="http://aws.amazon.com/">AWS account</a>.
+
+            <h3>Tutorial Componenet of Seminar</h3>
+
+            <h4>Setting up Linux on Virtual Box</h4>
+            <ol>
+              <li>Start up Virtual Box.</li>
+              <li>Click on "New" on the upper left corner of the interface.</li>
+              <li>In the "Name:" field, enter any name you want such as "Hadoop"</li>
+              <li>In the "Type:" field, choose Linux.</li>
+              <li>In the "Version:" field, choose Ubuntu.</li>
+              <li>Press "Next"</li>
+              <li>Choose a memory size, use 1024 MB for example, and then press next</li>
+              <li>Click on "Use an existing virtual hard drive file" browse to your .vmdk linux image file, choose it, and then click "Create"</li>
+            </ol>
+
+            <h4>AWS Preparation</h4>
+            <ol>
+              <li>Sign into AWS</li>
+              <li>Go to the main Amazon Web Services Page, if you're not sure click on the cube looking object at the top left of the screen.</li>
+              <li>Look for the name "EC2" under the Compute category and press it.</li>
+              <li>Scroll down the left side bar panel to find "Key Pairs" under the Network and Security category, and then click on "Key Pairs".</li>
+              <li>Click "Create Key Pair" button at the top.
+              <li>Type in a Key pair name, say "seminar-key" is fine</li>
+              <li>Download the "seminar-key.pem" file and store it somewhere convenient. I have saved in /home/user/tutorial/seminar-key.pem</li>
+              <li>Navigate to the folder containing the .pem file, and execute the following command: "chmod 600 seminar-key.pem". This step ensures that you are the only one who can access this file.</li>
+            </ol>
+            
+            <h4>Creating the cluster</h4>
+            <ol>
+              <li>Go back to the home page by clicking on the cube object at the top left.</li>
+              <li>Click on "EMR" under the Analytics category.</li>
+              <li>Click on "Create Cluster".</li>
+              
+
 
 <!--
             We often rely on R or Python for computations 
