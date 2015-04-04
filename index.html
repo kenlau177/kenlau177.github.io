@@ -37,7 +37,7 @@
     <div id="main_content_wrap" class="outer">
 
       <ul class="nav nav-tabs inner" id="myTab">
-        <li class="active">
+        <li>
           <a href="#home">
             Home
           </a>
@@ -47,7 +47,7 @@
             Projects
          </a>
         </li>
-        <li>
+        <li class="active">
           <a href="#hadoop">
             Hadoop
           </a>
@@ -57,7 +57,7 @@
       </ul>
 
       <div class="tab-content">
-      	<div id="home" class="tab-pane active">
+      	<div id="home" class="tab-pane">
       		<section id="main_content" class="inner">
       			<h3>About Me</h3>
       			<header class="inner">
@@ -116,29 +116,29 @@
 	        <br></br>
 			  </div>
 
-        <div id="hadoop" class="tab-pane">
+        <div id="hadoop" class="tab-pane active">
           <section id="main_content" class="inner">
-            <h3>Overview</h3>
-            Fitting a linear regression to a set of data can be easily carried out with R or Python. It is almost routine to just import the data and run a simple function such as lm in R. However, if the data is in the size of terabytes, forget about R as we cannot even import the data using a standard laptop of 8 Gb of memory. The solution is to use Hadoop and map-reduce which provide a way to process big data very efficiently. This presentation provides an introduction to Hadoop and map-reduce, and a guide to running a pseudo-distributed environment as well as on a cluster in AWS. 
+            <h3>1. Overview</h3>
+            In the upcoming student seminar, I will go over the fundamentals of Hadoop and map-reduce, and demonstrate how one can wrangle data using a distributed framework and file system. The style of this seminar will be similar to the other programming-related seminars where the first 15 minutes is an overview of the topic, and the last 30 minutes involves an interactive component. Using a distributed computing environment is most effective when data is so large that it cannot be processed on a single machine.
+            <br><br>
+            For the interactive part, anyone using Windows should consider downloading and installing Virtual Box and installing Linux in it. If you have trouble doing so, go to the following link and follow the instructions under "Preparation for the seminar". In summary, I provided a link to a linux image with Ubuntu 12.04 and it works.
+            <br><br>
+            https://kenlau177.github.io
+            <br><br>
+            Also, sign-up for an account at AWS if you have not done so already. 
+            <br><br>
+            Finally, I'll mention first before the seminar that I am a complete novice at this stuff, and I am just doing this for fun, so you're warned.  
 
-            Compiled from a combination of notes from online classes, blogs, tutorials, ... etc.
-            Complements of....
-
-            <h3>Preparation for the seminar</h3>
+            <h3>2. Preparation for the seminar</h3>
 
             <h4>Virual machine (VM) preparation:</h4>
-            If you are using a linux or mac, then you should be good to go. However, if you are using windows, then you should prepare linux using a virtual machine (VM) by using <<a href="https://www.virtualbox.org/wiki/Downloads">Virtual Box</a>. When you download Virtual Box, you don't immediately get linux, instead you need to download linux separately. 
+            If you are using a Linux or Mac, then you should be good to go. However, if you are using windows, then you should get Linux using a virtual machine (VM) by using <a href="https://www.virtualbox.org/wiki/Downloads">Virtual Box</a>. When you download Virtual Box, you don't immediately get Linux, instead you need to download Linux separately. 
 
             The following is a download link to a linux ubuntu 12.04 32-bit image that will get you running linux on a Virtual Box.
             
             <p><a href="https://spark-public.s3.amazonaws.com/datasci/Coursera-Data-Science-Ubuntu.ova">Linux Ubuntu Image</a></p>
 
             Once you have downloaded this file, you should unzip it. You should then notice a file that ends with .vmdk in the same directory. 
-
-            <h4>Sign up for an AWS account</h4>
-            Sign up for your <a href="http://aws.amazon.com/">AWS account</a>.
-
-            <h3>Tutorial Componenet of Seminar</h3>
 
             <h4>Setting up Linux on Virtual Box</h4>
             <ol>
@@ -152,9 +152,15 @@
               <li>Click on "Use an existing virtual hard drive file" browse to your .vmdk linux image file, choose it, and then click "Create"</li>
             </ol>
 
+            <h4>Sign up for an AWS account</h4>
+            Sign up for your <a href="http://aws.amazon.com/">AWS account</a>.
+
+            <h3>3. Tutorial component of seminar</h3>
+
             <h4>AWS Preparation</h4>
             <ol>
               <li>Sign into AWS</li>
+              <li>At the top right, your account name should be there, click on the drop down menu beside it and select "US West (Oregon)".</li>
               <li>Go to the main Amazon Web Services Page, if you're not sure click on the cube looking object at the top left of the screen.</li>
               <li>Look for the name "EC2" under the Compute category and press it.</li>
               <li>Scroll down the left side bar panel to find "Key Pairs" under the Network and Security category, and then click on "Key Pairs".</li>
@@ -169,27 +175,55 @@
               <li>Go back to the home page by clicking on the cube object at the top left.</li>
               <li>Click on "EMR" under the Analytics category.</li>
               <li>Click on "Create Cluster".</li>
-              
+              <li>Enter a name for the "Cluster name" field for example "tutorial"</li>
+              <li>Uncheck the "Logging" box.</li>
+              <li>In the Software Configuration section, pick the AMI version to be 2.4.2, and remove Hive and Pig under the "Applications to be installed"</li>
+              <li>Under Hardware Configuration, choose Master node to be m1.medium under "General Purpose (Previous Generation)" and Core node to be m1.medium or m1.small.</li>
+              <li>Under "Security and Access", select the EC2 key pair to be the name of the pem file, for example, seminar-key.pem.</li>
+              <li>Scroll down to the very bottom and click "Create Cluster"</li>
+            </ol>
+            
+            <h4>Connecting to the cluser</h4>
+            <ol>
+              <li>Start up a terminal</li>
+              <li>Navigate to the directory with the seminar-key.pem file</li>
+              <li>Run the following command:
+                <br>
+                <strong>ssh -o "ServerAliveInterval 10" -i seminar-key.pem hadoop@ec2-XX-XX-XXX-XXX.us-west-2.compute.amazonaw.com</strong>
+              </li>
+            </ol>
 
-
-<!--
-            We often rely on R or Python for computations 
-
-            When we perform computations for statistical analyses, we often rely on softwares such as R or Python 
-
-            The standard routine of data anlysis invovlves 
-
-            In data analyses and machine learning tasks, the routine 
-
-            Statistical analyses and machine learning tasks are often carried out in R, Python, and Matlab. We load in the data, and then ana
-
-            R, Python, and Matlab are popular softwares for statistical analyses. 
-
-            <h3>Summary</h3>
-
-
-            <h3>Outline</h3>
--->
+            <h4>Running map-reduce</h4>
+            <ol>
+              <li>Once you have connected successfully, clone the following repository to get the data and scripts for this tutorial by using the following command:
+                <br>
+                <strong>git clone https://github.com/kenlau177/Student-Seminar</strong>
+              </li>
+              <li>Navigate to the directory of the cloned repository</li> 
+              <li>Create a directory in the hadoop distributed file system (HDFS) by executing:
+                <br>
+                <strong>hadoop fs -mkdir /user/hadoop</strong>
+              </li>
+              <li>Create an input directory in HDFS:
+                <br>
+                <strong>hadoop fs -mkdir /user/hadoop/myinput</strong>
+              </li>
+              <li>Put stream-data.txt into the input directory in HDFS:
+                <br>
+                <strong>hadoop fs -put stream-data.txt /user/hadoop/myinput</strong>
+              </li>
+              <li>Run the map-reduce job</li>
+                <strong>hadoop jar /home/hadoop/contrib/streaming/hadoop-streaming-1.0.3.jar -mapper mapper.py -reducer reducer.py -file mapper.py -file reducer.py -input /user/hadoop/myinput -output /user/hadoop/joboutput</strong>
+              </li>
+              <li>Copy the files from HDFS to server.
+                <br>
+                <strong>hadoop fs -copyToLocal /user/hadoop/joboutput part-00000</strong>
+              </li>
+              <li>Copy the results from server to local computer by running the following command from the local computer.
+                <br>
+                <strong>scp -o "ServerAliveInterval 10" -i seminar-key.pem hadoop@ec2-XX-XX-XXX-XXX.us-west-2.compute.amazonaws.com</strong>
+              </li>
+            </ol>
 
           </section>  
           <br></br>
