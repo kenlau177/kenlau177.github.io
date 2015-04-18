@@ -37,7 +37,7 @@
     <div id="main_content_wrap" class="outer">
 
       <ul class="nav nav-tabs inner" id="myTab">
-        <li>
+        <li class="active">
           <a href="#home">
             Home
           </a>
@@ -47,9 +47,9 @@
             Projects
          </a>
         </li>
-        <li class="active">
+        <li>
           <a href="#hadoop">
-            Hadoop
+            Hadoop-Tutorial
           </a>
         </li>
 
@@ -57,7 +57,7 @@
       </ul>
 
       <div class="tab-content">
-      	<div id="home" class="tab-pane">
+      	<div id="home" class="tab-pane active">
       		<section id="main_content" class="inner">
       			<h3>About Me</h3>
       			<header class="inner">
@@ -79,7 +79,7 @@
 		        <h3>M.Sc. Project, 2015</h3>
 		        <center><img src="images/flow-bigPicture.png" alt="M.Sc. Project" style="width:90%; height:90%; border:1px solid black"></center>
 		        <p>This project involves the development of tree-based supervised methods to discern different waveform types from radio signals transmitted from wireless communication systems. The tree-based methods include classification tree, random forest, and feature-based tree.
-		        <p><a href="https://github.com/kenlau177/MSC_Project">Repository</a> | Paper (in preparation)
+		        <p><a href="https://github.com/kenlau177/MSC_Project">Repository</a> | <a href="https://github.com/kenlau177/MSC_Project/blob/master/main.pdf">M.Sc. Report</a> | Paper (in preparation)
 
 		        <h3>Random Forest Visualization Applications, 2014</h3>
 		        <p>I developed two visualization applications as part of the final project of CPSC 547: Information Visualization. As random forest belongs to a class of black-box models for machine learning, the purpose of the visualizations is to provide intuition and descriptive information for the set of trees generated from a random forest classifier.</p>
@@ -114,7 +114,7 @@
 	        <br></br>
 			  </div>
 
-        <div id="hadoop" class="tab-pane active">
+        <div id="hadoop" class="tab-pane">
           <section id="main_content" class="inner">
             <h3>1. Overview</h3>
             In the upcoming student seminar, I will go over the fundamentals of Hadoop and map-reduce, and demonstrate how one can wrangle data using a distributed framework and file system. The style of this seminar will be similar to the other programming-related seminars where the first 15 minutes involves an overview of the topic, and the last 30 minutes an interactive component. A distributed computing environment is most useful when data is so large that it cannot be processed on a single machine.
@@ -126,7 +126,7 @@
             Also, sign-up for an Amazon Web Service (AWS) account if you have not already done so. http://aws.amazon.com/.
 
             <br><br>
-            The following instructions guide you to starting up your own cluster. The majority of the material is obtained from this <a href="https://www.coursera.org/course/datasci">Introduction to Data Science course</a>.  
+            The following instructions guide you to starting up your own cluster. The majority of the material is obtained from this <a href="https://www.coursera.org/course/datasci">Introduction to Data Science course</a>. I highly recommend doing the section on Amazon Web Service if any.
             
             <h3>2. Preparation for the seminar</h3>
 
@@ -186,9 +186,9 @@
             <ol>
               <li>Start up a terminal</li>
               <li>Navigate to the directory with the seminar-key.pem file</li>
-              <li>Run the following command:
+              <li>Run the following command where "ec2-XX-XX-XXX-XXX..." is the name of the server you're going to connect to. It can be found at the "Master Public DNS" field at the page where you created your cluster or under "Cluster List".
                 <br>
-                <strong>ssh -o "ServerAliveInterval 10" -i seminar-key.pem hadoop@ec2-XX-XX-XXX-XXX.us-west-2.compute.amazonaw.com</strong>
+                <strong>ssh -o "ServerAliveInterval 10" -i seminar-key.pem hadoop@ec2-XX-XX-XXX-XXX.us-west-2.compute.amazonaws.com</strong>
               </li>
             </ol>
 
