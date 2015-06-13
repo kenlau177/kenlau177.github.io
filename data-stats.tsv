@@ -1,0 +1,22 @@
+skill	knowledge
+Boosting	.8
+Regression Trees	.95
+Cluster Analysis	.7
+Coordinate Descent	.6
+EM Algorithm	.6
+Fenchel's Duality	.3
+Graphical Models	.3
+K Nearest Neighbor	.8
+LASSO/Ridge Regression	.8
+Logistic Regression	.85
+Multiple Linear Regression	.9
+Monte Carlo Methods	.4
+Neural Networks	.5
+PCA	.6
+Random Forest	.95
+Statistical Inference	.85
+Stepwise Selection	.9
+Stochastic Gradient Descent	.6
+Stochastic Processes	.5
+Time Series	.7
+Viterbi Decoding	.3

@@ -67,7 +67,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   margin: 10px 0;
   font-weight: 700;
-  color:#222222;
+  /*color:#222222;*/
   font-family: 'Lucida Grande', 'Calibri', Helvetica, Arial, sans-serif;
   letter-spacing: -1px;
 }
@@ -240,22 +240,29 @@ hr {
 }
 
 table {
-  border: 1px solid #373737;
+  border: 1px solid #474747;
   margin-bottom: 20px;
   text-align: left;
  }
 
 th {
   font-family: 'Lucida Grande', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  padding: 10px;
-  background: #373737;
+  padding: 2px;
+  background: #474747;
   color: #fff;
+  font-size: 16px;
  }
 
 td {
-  padding: 10px;
-  border: 1px solid #373737;
+  padding: 2px;
+  padding-right: 7px;
+  border: 1px solid #474747;
+  font-size: 16px;
  }
+
+tbody tr:nth-child(even) {
+  background: #2f2f2f;
+}
 
 form {
   background: #f2f2f2;
@@ -303,7 +310,7 @@ Full-Width Styles
 
 #project_tagline {
   color: #bfbfbf;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 300;
   background: none;
   text-shadow: #111 0px 0px 10px;
@@ -352,7 +359,7 @@ Full-Width Styles
   background: #f2f2f2;
   border-top: 1px solid #111;
   border-bottom: 1px solid #111;
-  padding-bottom: 100px;
+  /*padding-bottom: 100px;*/
 }
 
 #main_content {
@@ -370,25 +377,49 @@ Full-Width Styles
 #myTab {
   border-bottom-color: transparent;
   position: relative;
-  margin-top: 30px;
+  margin-top: 40px;
   margin-bottom: 20px;
 }
 
-.iconDetails {
-  float: left;
-  height: 40px;
-  width: 40px;
+.navtabs-custom {
+    color: #ffffff;
+    font-weight: bold;
+}
+.navtabs-custom .nav-tabs > li > a {
+    color: #ffffff;
+    border-radius: 7px 7px 7px 7px;
+}
+.navtabs-custom .nav-tabs > li > a:hover {
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+    background-color: #335C33;
+    border-color: transparent;
+    color: #ffffff;
+}
+.navtabs-custom .nav-tabs > .active > a, .nav-tabs > .active > a:hover, .nav-tabs > .active > a:focus {
+    color: #ffffff;
+    background-color: #335C33;
+    border-color: transparent;
+    border-radius: 7px 7px 7px 7px;
+}
+
+img.iconDetails {
+  height: 45px;
+  width: 45px;
   margin: 0px;
-  margin-top: 13px;
   padding: 0px;
-  border: 1px solid #;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
 
-.outlineLogo img:hover {
-  /*outline: #d3d3d3 solid 4px;*/
+#my-list > li {
+    padding: 5px;
+    display: inline-block;
+    *display: inline;
+}
+
+#my-list > li > a > img:hover {
   opacity: 0.7;
   filter: alpha(opacity=70);
 }
@@ -396,6 +427,56 @@ Full-Width Styles
 #body {
    padding:10px;
    padding-bottom:60px;   /* Height of the footer */
+}
+
+.darkRegion {
+    color: #ffffff;
+    background-color: #212121;
+}
+
+.darkRegion > #main_content {
+    color: #ffffff;
+}
+
+.refLinkInDark {
+    color: #cbdef7;
+}
+
+/***************************************************************************
+Sortable Skill Bar Chart
+****************************************************************************/
+
+.axis text {
+  font: 12px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: none;
+  shape-rendering: crispEdges;
+}
+
+.bar {
+  fill: #004c00;
+  fill-opacity: 1;
+  stroke: none;
+}
+
+.barNorm {
+  fill: #3f3f3f;
+  fill-opacity: .7; 
+  stroke: none;  
+}
+
+.x.axis path {
+  display: none;
+}
+
+label {
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 
 /*******************************************************************************
