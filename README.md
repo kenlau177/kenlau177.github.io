@@ -1,1 +1,1 @@
-## Personal Website of [Ken Lau](www.kenlau177.github.io)
+### Personal Website of <a href="www.kenlau177.github.io">Ken Lau</a>
