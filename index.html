@@ -12,12 +12,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>    
     
-    <title>Ken Lau - Home</title>
-
-  </head>
-
-  <body>
-    
+    <!-- Google Analytics Stuff -->
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -27,7 +22,14 @@
       ga('create', 'UA-71304939-1', 'auto');
       ga('send', 'pageview');
     </script>
+    <script src="js/jquery.scrolldepth.min.js"></script>
 
+    <title>Ken Lau - Home</title>
+
+  </head>
+
+  <body>
+    
     <!-- HEADER -->
     <div id="header_wrap" class="inner">
       <div class="row">
@@ -76,7 +78,7 @@
 
     <div id="main_content_wrap" class="outer">
       <div id="home" class="tab-pane active">
-        <section id="main_content" class="inner">
+        <section class="inner main_content">
           <br>
           <h2 style="background:none">About Me</h2>
           <header class="inner" style="padding-top: 5px">
@@ -95,7 +97,7 @@
         </section>  
       </div>
       <div class="darkRegion">
-        <section id="main_content" class="darkRegion inner">
+        <section class="darkRegion inner main_content">
           <br>
           <div class="row">
             <div class="col-sm-8">
@@ -273,7 +275,7 @@
       </div>
       
       <div>
-        <section id="main_content" class="inner">
+        <section id="skill_section" class="inner main_content">
           <div class="row" style="padding-top:0px">
             <h2 style="background:none">Data Science Skill Set</h2>
             <div class="col-sm-5 panel1">
@@ -289,6 +291,18 @@
       </div>
 
       <script src="js/sortable-bar-skills.js"></script>
+
+      <script>
+        jQuery(function() {
+          jQuery.scrollDepth({
+            elements: ['#skill_section'],
+            percentage: false,
+            userTiming: false,
+            pixelDepth: false,
+            nonInteraction: false
+          });
+        });
+      </script>
 
     </div>
 
