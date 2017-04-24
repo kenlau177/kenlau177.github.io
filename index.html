@@ -22,7 +22,6 @@
       ga('create', 'UA-71304939-1', 'auto');
       ga('send', 'pageview');
     </script>
-    <script src="js/jquery.scrolldepth.min.js"></script>
 
     <title>Ken Lau - Home</title>
 
@@ -31,35 +30,30 @@
   <body>
     
     <!-- HEADER -->
-    <div id="header_wrap" class="inner">
-      <div class="row">
-        <div class="col-sm-6"> 
-          <h1 id="project_title" align="left" style="margin-top: 10px">Ken Lau</h1>
-          <hr style="border-top: en dash 1px; margin: 0px; width: 350px" />
-          <h2 id="project_tagline" align="left" style="margin-bottom: 0px">Data Scientist - Analytics & Developer
-          <h2 id="project_tagline" align="left" style="margin: 0px">M. Sc. Statistics, UBC</h2>
-        </div>
-        <div class="col-xm-8 col-sm-6 navtabs-custom">
-          <ul class="nav nav-tabs" id="myTab">
-            <li class="active">
-              <a href="index.html">
-                HOME
-              </a>
-            </li>
-            <li>
-              <a href="projects.html">
-                PROJECTS
-              </a>
-            </li>
-            <li>
-              <a href="presentations.html">
-                PRESENTATIONS
-              </a>
-            </li>
-            <!-- Add hobbies tab panel later -->
-            <!-- TODO: Add a side panel to categorize the projects -->
-          </ul>
-        </div>
+    <div id="header_wrap">
+      <center>
+        <h1 id="project_title">Ken Lau</h1>
+        <h2 id="project_tagline">Data Scientist | M.Sc. Statistics | UBC</h2>
+      </center>
+      <div class="navtabs-custom">
+        <ul class="nav nav-tabs" id="myTab">
+          <li class="active">
+            <a href="index.html">
+              HOME
+            </a>
+          </li>
+          <li>
+            <a href="projects.html">
+              PROJECTS
+            </a>
+          </li>
+          <li>
+            <a href="presentations.html">
+              PRESENTATIONS
+            </a>
+          </li>
+          <!-- Add hobbies tab panel later -->
+        </ul>
       </div>
     </div>
 
@@ -80,20 +74,40 @@
       <div id="home" class="tab-pane active">
         <section class="inner main_content">
           <br>
-          <h2 style="background:none">About Me</h2>
           <header class="inner" style="padding-top: 5px">
             <div class="row" style="padding-top:0px">
-              <div class="col-sm-8">
-                <p align="left">I am currently working at the Alberta Gaming and Liquor Comission (AGLC) as a Data Scientist analyzing the impact of different factors on gaming revenue such as the impact of economy. I also work on different business cases such as minizing costs on the installment of new slots. 
-                </p>
-                <p align="left">I graduated from the the University of British Columbia (UBC) with a M.Sc. in Statistics, and have previously completed a B.Sc. degree in Statistics at UBC. During my M.Sc. program, I worked as a research assistant in the electrical and computer engineering department where I applied machine learning techniques to wireless communication systems to improve predictive performance of radio signal waveform detection. I also worked at Environment Canada as a co-op student where I managed air quality data and built models and frameworks to forecast air quality.
-                </p>
+              <div class="col-sm-7">
+                <hr class="section-heading-spacer">
+                <br>
+                <center>
+                  <h2 style="margin: 0px;">About Me</h2>
+                </center>
+                <p class="section-p">I currently work at the Alberta Gaming and Liquor Commission (AGLC) in Edmonton as a data scientist.</p>
+                <p class="section-p">I completed a M.Sc. in Statistics at the University of British Columbia (UBC).</p>
+                <p class="section-p">I play lots of ultimate frisbee :)</p>
               </div>
-              <div class="col-sm-4">
-                <img src="images/facebook_profilepic.jpg" alt="Profile Picture" style="width:190px; height:220px; margin-top:0px; margin-bottom:0px" align="left"></img>
+              <div class="col-sm-5">
+                <center>
+                  <img src="images/profile_pic_2017-04-20.jpg" alt="Profile Picture" style="width:210px; height:260px; margin-top:0px; margin-bottom:0px"></img>
+                </center>
               </div>
             </div>
-         </header>
+            <br>
+            <div class="row">
+              <div class="col-sm-6">
+                <center>
+                  <hr class="section-heading-spacer">
+                  <img src="images/ulti.jpg" alt="Profile Picture" style="width:280px; height:200px; margin-top:0px; margin-bottom:0px"></img>
+                </center>
+              </div>
+              <div class="col-sm-6">
+                <center>
+                  <hr class="section-heading-spacer">
+                  <img src="images/ulti_team.jpg" alt="Profile Picture" style="width:280px; height:200px; margin-top:0px; margin-bottom:0px"></img>
+                </center>
+              </div>
+            </div>
+          </header>
         </section>  
       </div>
       <div class="darkRegion">
@@ -244,7 +258,7 @@
               <a href="https://www.coursera.org/course/datasci" class="refLinkInDark">Introduction to Data Science</a> - University of Washington (with certificate)
             </li>
             <li>
-              <a href="https://www.coursera.org/course/sna" class="refLinkInDark">Social Network Analysis</a> - University of Michigan (with certificate)
+              Social Network Analysis - University of Michigan (with certificate)
             </li>
             <li>
               <a href="https://www.coursera.org/learn/text-mining" class="refLinkInDark">Text Mining and Analysis</a> - University of Illinois at Urbana-Champaign (with certificate)
@@ -255,6 +269,9 @@
             <li>
               <a href="https://www.coursera.org/course/gametheory2" class="refLinkInDark">Game Theory II</a> - Stanford University (with certificate)
             </li>
+            <li>
+              <a href="https://www.coursera.org/learn/developer-iot/" class="refLinkInDark">A Developer's Guide to IoT</a> - IBM (with certificate)
+            </li>
             <h5><a href="https://www.udacity.com" class="refLinkInDark">Udacity:</a></h5>
             <li>
               Intro to Hadoop and MapReduce
@@ -262,80 +279,122 @@
             <li>
               Data Wrangling with MongoDB
             </li>
-            <li>
-              JavaScript Basics
-            </li>
-            <li>
-              Intro to HTML and CSS
-            </li>
-            <li>
-              Intro to jQuery
-            </li>
         </section>
       </div>
       
       <div>
-        <section id="skill_section" class="inner main_content">
-          <div class="row" style="padding-top:0px">
-            <h2 style="background:none">Data Science Skill Set</h2>
-            <div class="col-sm-5 panel1">
-              <h4 style="position: relative; left: 70px;">Programming Proficiency</h4>
-              <center></label><input type="checkbox" id="myCheckBox1"> Sort by skill</label></center>
+        <section class="inner main_content">
+          <br>
+          <header class="inner" style="padding-top: 5px">
+            <h2>Work Experience</h2>
+            <div class="row" style="padding-top:0px">
+              <br>
+              <div class="col-sm-9">
+                <h4 style="margin: 0px;">Data Scientist - Alberta Gaming and Liquor Commission<br/>(Aug 2015 - Present)</h4>
+                <ul class="section-ul">
+                  <li>Analyze factors affecting revenue on slot play using mixed effects models.</li>
+                  <li>Wrangle data and find patterns in game play data to optimize player experience.</li>
+                  <li>Develop tools to suggest distribution of slots in network.</li>
+                  <li>Experiment with simulated player data using Spark through AWS.</li>
+                </ul>
+              </div>
+              <div class="col-sm-3">
+                <center>
+                  <img src="images/aglc.png" style="width:240px; height:130px; margin-top:30px; margin-bottom:0px"></img>
+                </center>
+              </div>
             </div>
-            <div class="col-sm-7 panel2">
-              <center><h4 style="position: relative; left: 50px;">Machine Learning & Statistics</h4></center>
-              <center></label><input type="checkbox" id="myCheckBox2"> Sort by skill</label></center>
+            <br>
+            <div class="row">
+              <hr class="section-heading-spacer">
+              <br>
+              <div class="col-sm-3">
+                <center>
+                  <img src="images/ubc-icon.png" style="width:140px; height:160px; margin-top:0px; margin-bottom:0px"></img>
+                </center>
+              </div>
+              <div class="col-sm-9">
+                <h4 style="margin: 0px;">Research Assistant - UBC (Jan 2014 - Feb 2015)</h4>
+                <ul class="section-ul">
+                  <li>Simulate transmission signals in Matlab.</li>
+                  <li>Implement new feature variables for tree-based classifiers using R.</li>
+                  <li>Improve predictive performance of existing methods.</li>
+                </ul>
+              </div>
             </div>
+            <div class="row" style="padding-top:0px">
+              <hr class="section-heading-spacer">
+              <br>
+              <div class="col-sm-9">
+                <h4 style="margin: 0px;">Data Analyst Intern - Environment Canada (Feb 2013 - Aug 2013)</h4>
+                <ul class="section-ul">
+                  <li>Predict air quality in ozone, nitrate, and particle mass elements.</li>
+                  <li>Implement and optimize boosting trees and support vector machine regressors.</li>
+                  <li>Impute missing data using nearest neighbor and multiple imputation methods.</li>
+                </ul>
+              </div>
+              <div class="col-sm-3">
+                <center>
+                  <img src="images/environment_canada.jpg" style="width:220px; height:150px; margin-top:0px; margin-bottom:0px"></img>
+                </center>
+              </div>
+            </div>
+          </header>
+        </section>  
+      </div>
+
+      <div class="darkRegion">
+        <section id="skill_section" class="darkRegion inner main_content">
+          <div class="row" style="padding-top:20px">
+            <h2 style="background:none">Programming Skills</h2>
+            <br>
+            <table class="table">
+              <tbody>
+                <tr>
+                  <td>Proficient</td>
+                  <td>R, Python, HTML/CSS/Javascript, SQL</td>
+                </tr>
+                <tr>
+                  <td>Satisfactory</td>
+                  <td>Matlab, Java, Hadoop, Spark, Git</td>
+                </tr>
+                <tr>
+                  <td>Basic</td>
+                  <td>C, C++, Nodejs</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </section>  
       </div>
 
-      <script src="js/sortable-bar-skills.js"></script>
-
-      <script>
-        jQuery(function() {
-          jQuery.scrollDepth({
-            elements: ['#skill_section'],
-            percentage: false,
-            userTiming: false,
-            pixelDepth: false,
-            nonInteraction: false
-          });
-        });
-      </script>
-
+      <div class="inner">
+        <section class="inner main_content">
+          <ul id="my-list">
+            <li>
+              <a class="linkedin" href="https://ca.linkedin.com/pub/ken-lau/26/221/4a1">
+                <img src="images/linkedin-icon.png" alt="Linked In" style="box-shadow: none; border: none;" class="iconDetails">
+              </a>
+            </li>
+            <li>
+              <a href="https://twitter.com/ken_lau177">
+                <img src="images/twitter-icon.png" alt="Twitter" style="box-shadow: none; border: none;" class="iconDetails">
+              </a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/ken.lau.102977">
+                <img src="images/facebook-icon.png" alt="Facebook" style="box-shadow: none; border: none;" class="iconDetails">
+              </a>
+            </li>
+            <li>
+              <img src="images/message-icon.png" alt="Contact Me" style="box-shadow: none; border: none;" class="iconDetails">
+            </li>
+            <li>  
+              <h4>ken.lau171@gmail.com</h4>
+            </li>
+          </ul>
+        </section>
+      </div>
     </div>
-
-    <div id="#footer_wrap" class="inner">
-      <ul id="my-list">
-        <li>
-          <a class="linkedin" href="https://ca.linkedin.com/pub/ken-lau/26/221/4a1">
-            <img src="images/linkedin-icon.png" alt="Linked In" style="box-shadow: none; border: none;" class="iconDetails">
-          </a>
-        </li>
-        <li>
-          <a href="https://twitter.com/ken_lau177">
-            <img src="images/twitter-icon.png" alt="Twitter" style="box-shadow: none; border: none;" class="iconDetails">
-          </a>
-        </li>
-        <li>
-          <a href="https://www.facebook.com/ken.lau.102977">
-            <img src="images/facebook-icon.png" alt="Facebook" style="box-shadow: none; border: none;" class="iconDetails">
-          </a>
-        </li>
-        <li>
-          <img src="images/message-icon.png" alt="Contact Me" style="box-shadow: none; border: none;" class="iconDetails">
-        </li>
-        <li>  
-          <div id="project_tagline" style="position: relative; top: 10px;">
-            Email:
-          </div>
-          <div id="project_tagline" style="position: relative; top: 10px;;">
-            ken_lau177@hotmail.com
-          </div>
-        </li>
-      </ul>
-    </div>
-    
   </body>
 </html>

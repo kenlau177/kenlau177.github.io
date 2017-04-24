@@ -1,54 +1,3 @@
-/*******************************************************************************
-Slate Theme for GitHub Pages
-by Jason Costello, @jsncostello
-*******************************************************************************/
-
-/*
-@import url(pygment_trac.css);
-*/
-
-/*******************************************************************************
-MeyerWeb Reset
-*******************************************************************************/
-
-/*
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font: inherit;
-  vertical-align: baseline;
-}
-*/
-
-/* HTML5 display-role reset for older browsers */
-/*
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block;
-}
-
-ol, ul {
-  list-style: none;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-*/
 
 /*******************************************************************************
 Theme Styles
@@ -80,7 +29,6 @@ h1 {
 h2 {
   padding-bottom: 10px;
   font-size: 32px;
-  background: url('../images/bg_hr.png') repeat-x bottom;
 }
 
 h3 {
@@ -236,7 +184,6 @@ hr {
   height: 1px;
   margin-bottom: 5px;
   border: none;
-  background: url('../images/bg_hr.png') repeat-x center;
 }
 
 table {
@@ -285,35 +232,24 @@ Full-Width Styles
 }
 
 #header_wrap {
-  background: #212121;
-  padding: 0px 10px 0px 10pxis_firs;
-  /*
-  background: -moz-linear-gradient(top, #373737, #212121);
-  background: -webkit-linear-gradient(top, #373737, #212121);
-  background: -ms-linear-gradient(top, #373737, #212121);
-  background: -o-linear-gradient(top, #373737, #212121);
-  background: linear-gradient(top, #373737, #212121);
-  */
-}
-
-#header_wrap .inner {
-  padding: 10px 10px 10px 10px;
+  background-image:url('../images/background.jpg');
+  background-size: 100% 100%;
 }
 
 #project_title {
+  padding: 120px 0 0 0;
   margin: 0;
   color: #fff;
-  font-size: 46px;
+  font-size: 50px;
   font-weight: 700;
   text-shadow: #111 0px 0px 10px;
 }
 
 #project_tagline {
-  color: #bfbfbf;
-  font-size: 20px;
-  font-weight: 300;
+  color: #fff;
+  font-size: 32px;
+  font-weight: 500;
   background: none;
-  text-shadow: #111 0px 0px 10px;
 }
 
 #downloads {
@@ -368,7 +304,7 @@ Full-Width Styles
 
 #footer_wrap {
   /*background: #212121;*/
-  background: #123345;
+  background: #e8e8e8;
   bottom: 0px;
   height: 60px;
   position: absolute;
@@ -377,8 +313,7 @@ Full-Width Styles
 #myTab {
   border-bottom-color: transparent;
   position: relative;
-  margin-top: 40px;
-  margin-bottom: 20px;
+  padding: 20px 0 80px 0;
 }
 
 .navtabs-custom {
@@ -401,6 +336,29 @@ Full-Width Styles
     background-color: #335C33;
     border-color: transparent;
     border-radius: 7px 7px 7px 7px;
+}
+.nav-tabs > li, .nav-pills > li {
+    float:none;
+    display:inline-block;
+    *display:inline; /* ie7 fix */
+     zoom:1; /* hasLayout ie7 trigger */
+}
+.nav-tabs, .nav-pills {
+    text-align:center;
+}
+
+.section-heading-spacer {
+  width: 80%;
+  border-top: 3px solid #e7e7e7;
+}
+.section-p {
+  font-size: 18px;
+  font-weight: 400;
+}
+.section-ul {
+  font-size: 18px;
+  font-weight: 400;
+  margin: 20px 0 0 0px;
 }
 
 img.iconDetails {

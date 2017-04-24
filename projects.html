@@ -17,38 +17,32 @@
 
   <body>
     <!-- HEADER -->
-    <div id="header_wrap" class="inner">
-      <div class="row" style="padding-top:0px">
-        <div class="col-sm-6">
-          <h1 id="project_title" align="left" style="margin-top: 10px">Ken Lau</h1>
-          <hr style="border-top: en dash 1px; margin: 0px; width: 350px" />
-          <h2 id="project_tagline" align="left" style="margin-bottom: 0px">Data Scientist - Analytics & Developer
-          <h2 id="project_tagline" align="left" style="margin: 0px">M. Sc. Statistics, UBC</h2>
-        </div>
-        <div class="col-xm-8 col-sm-6 navtabs-custom">
-          <ul class="nav nav-tabs" id="myTab">
-            <li>
-              <a href="index.html">
-                HOME
-              </a>
-            </li>
-            <li class="active">
-              <a href="projects.html">
-                PROJECTS
-              </a>
-            </li>
-            <li>
-              <a href="presentations.html">
-                PRESENTATIONS
-              </a>
-            </li>
-            <!-- Add hobbies tab panel later -->
-            <!-- TODO: Add a side panel to categorize the projects -->
-          </ul>
-        </div>
+    <div id="header_wrap">
+      <center>
+        <h1 id="project_title">Ken Lau</h1>
+        <h2 id="project_tagline">Data Scientist | M.Sc. Statistics | UBC</h2>
+      </center>
+      <div class="navtabs-custom">
+        <ul class="nav nav-tabs" id="myTab">
+          <li>
+            <a href="index.html">
+              HOME
+            </a>
+          </li>
+          <li class="active">
+            <a href="projects.html">
+              PROJECTS
+            </a>
+          </li>
+          <li>
+            <a href="presentations.html">
+              PRESENTATIONS
+            </a>
+          </li>
+          <!-- Add hobbies tab panel later -->
+        </ul>
       </div>
     </div>
-
     <!-- MAIN CONTENT -->
 
     <!--
@@ -65,21 +59,30 @@
     <div id="main_content_wrap" class="outer">
     	<div id="projects" class="tab-pane">
 	      <section id="main_content" class="inner">
-	        <h3>Productivity Beats, 2016</h3>
+	        <h3>Cribbage Assistant, 2017</h3>
+          <center><img src="images/cribbage.png" alt="cribbage" style="width:400px; height:250px; border:1px solid black"></center>
+          <p>An app where cribbage players can score and optimize their hands. It is also useful for beginners and advanced players to brush up on their skills.</p>
+          <a href="https://cribassistant.github.io">Cribbage Assistant App Link</a>
+
+          <hr class="section-heading-spacer">          
+          <h3>Productivity Beats, 2016</h3>
           <center><img src="images/productivity-beats.png" alt="productivity beats" style="width:400px; height:250px; border:1px solid black"></center>
           <p>A chrome extension that let users block time consuming sites and play their own music files.</p>
           <a href="https://chrome.google.com/webstore/detail/productivity-beats/mgijflbgfkdcdhonodjhpigemiphdhkc">Chrome add-on</a></p>
 
+          <hr class="section-heading-spacer">
           <h3>Electric Vehile Traffic Intensity Estimation, 2015</h3>
           <center><img src="images/electric-vehicle-app.png" alt="electric vehicle app" style="width:500px; height:200px; border:1px solid black"></center>
           <p>A statistical consulting project examining the expansion of the current infrastructure of electic vehicles at UBC. The goal is to determine the number of additional charging stations to construct in order to meet the demands of increased electic vehicle usage in the future. We use queuing models in the analysis, and a visualization app for illustration.</p>
           <a href="https://github.com/kenlau177/Electric-Vehicle-App">Repository</a> | <a href="https://github.com/kenlau177/Electric-Vehicle-App/blob/master/report.pdf">Report</a> | <a href="http://kenlau177.github.io/Electric-Vehicle-App/">Visualization App</a>
 
+          <hr class="section-heading-spacer">
           <h3>M.Sc. Project, 2015</h3>
 	        <center><img src="images/flow-bigPicture.png" alt="M.Sc. Project" style="width:90%; height:90%; border:1px solid black"></center>
 	        <p>This project involves the development of tree-based supervised methods to discern different waveform types from radio signals transmitted from wireless communication systems. The tree-based methods include classification tree, random forest, and feature-based tree.
 	        <p><a href="https://github.com/kenlau177/MSC_Project">Repository</a> | <a href="https://github.com/kenlau177/MSC_Project/blob/master/main.pdf">M.Sc. Report</a> | <a href="http://www.sciencedirect.com/science/article/pii/S1434841116303430">Paper</a>
 
+          <hr class="section-heading-spacer">
 	        <h3>Random Forest Visualization Applications, 2014</h3>
 	        <p>I developed two visualization applications as part of the final project of CPSC 547: Information Visualization. As random forest belongs to a class of black-box models for machine learning, the purpose of the visualizations is to provide intuition and descriptive information for the set of trees generated from a random forest classifier.</p>
 	        
@@ -94,6 +97,7 @@
 	        <p>This application fits a random forest classifier on a fixed data set, and filters the ensemble of decision trees of the classifier by quantifying the trees by hamann similarity measure. The application is implemented in RShiny.</p>
 	        <p><a href="https://kenlau177.shinyapps.io/randomForestApp/">Live demo</a> | <a href="http://kenlau177.github.io/cpsc547/">More information</a></p>
 
+          <hr class="section-heading-spacer">
 	        <h3>Social Network Analysis, 2014</h3>
 	        <center><img src="images/my-ego.png" alt="Ego Network" style="width:50%; height:40%; border:1px solid black"><img src="images/my-ego_wtc.png" alt="Ego Network 2" style="width:50%; height:40%; border:1px solid black"></center>
 
@@ -101,6 +105,7 @@
 	        
 	        <p><a href="http://kenlau177.github.io/Social_Network_Analysis/">Report</a> | <a href="https://github.com/kenlau177/Social_Network_Analysis">Repository</a></p>
 
+          <hr class="section-heading-spacer">
 	        <h3>Stochastic Gradient Boosting with Squared Error Epsilon Loss, 2014</h3>
 	        <center><img src="images/squared_error_loss.png" alt="Squared Error" style="width:30%; height:25%; border:1px solid black"><img src="images/squared_error_epsilon_loss.png" alt="Squared Epsilon" style="width:30%; height:25%; border:1px solid black"></center>
 
@@ -135,12 +140,7 @@
           <img src="images/message-icon.png" alt="Contact Me" style="box-shadow: none; border: none;" class="iconDetails">
         </li>
         <li>  
-          <div id="project_tagline" style="position: relative; top: 10px;">
-            Email:
-          </div>
-          <div id="project_tagline" style="position: relative; top: 10px;;">
-            ken_lau177@hotmail.com
-          </div>
+          <h4 style="color:#fff;">ken.lau171@gmail.com</h4>
         </li>
       </ul>
     </div>
