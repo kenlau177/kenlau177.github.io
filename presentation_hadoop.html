@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="Kenlau177.GitHub.io : ">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>    
+    
+    <title>Ken Lau - Presentation Hadoop</title>
+
+  </head>
+
+  <body>
+
+    <div id="main_content_wrap" class="outer">
+      <div id="presentations" class="tab-pane">
+        <section id="main_content" class="inner">
+          <h3>Student Seminar Presentation on using Hadoop for Big Data</h3>
+          <ul style="list-style-type: none">
+            <li><h5>Ken Lau</h5></li>
+            <li><h5>April 9, 2015</h5></li>
+          </ul>
+
+          <h3>1. Overview</h3>
+          In this student seminar, I go over the fundamentals of Hadoop and map-reduce, and demonstrate how one can wrangle data using a distributed framework and file system. The style of this seminar will be similar to the other programming-related seminars where the first 15 minutes involves an overview of the topic, and the last 30 minutes an interactive component. A distributed computing environment is most useful when data is so large that it cannot be processed on a single machine.
+
+          <p>The slides for the presentation part of the seminar can be viewed <a href="https://github.com/kenlau177/kenlau177.github.io/blob/master/images/student-seminar-presentation.pdf">here</a>.</p>
+          
+          Now turning our attention to the interactive part, anyone using Windows should consider downloading and installing Virtual Box and installing Linux in it. You can also use the link below and follow the instructions under "Preparation for the seminar". In summary, I provided a link to a linux image with Ubuntu 12.04 and it should work.
+
+          Also, sign-up for an Amazon Web Service (AWS) account if you have not already done so. http://aws.amazon.com/.
+
+          <br><br>
+          The following instructions guide you to starting up your own cluster. The majority of the material is obtained from this <a href="https://www.coursera.org/course/datasci">Introduction to Data Science course</a>. I highly recommend doing the section on Amazon Web Service if any.
+          
+          <h3>2. Preparation for the seminar</h3>
+
+          <h4>Virual machine (VM) preparation:</h4>
+          If you are using a Linux or Mac, then you should be good to go. However, if you are using windows, then you should get Linux using a virtual machine (VM) by using <a href="https://www.virtualbox.org/wiki/Downloads">Virtual Box</a>. When you download Virtual Box, you don't immediately get Linux, instead you need to download Linux separately. 
+
+          The following is a download link to a linux ubuntu 12.04 32-bit image that will get you running linux on a Virtual Box.
+          
+          <p><a href="https://spark-public.s3.amazonaws.com/datasci/Coursera-Data-Science-Ubuntu.ova">Linux Ubuntu Image</a></p>
+
+          Once you have downloaded this file, you should unzip it. You should then notice a file that ends with .vmdk in the same directory. 
+
+          <h4>Setting up Linux on Virtual Box</h4>
+          <ol>
+            <li>Start up Virtual Box.</li>
+            <li>Click on "New" on the upper left corner of the interface.</li>
+            <li>In the "Name:" field, enter any name you want such as "Hadoop"</li>
+            <li>In the "Type:" field, choose Linux.</li>
+            <li>In the "Version:" field, choose Ubuntu.</li>
+            <li>Press "Next"</li>
+            <li>Choose a memory size, use 1024 MB for example, and then press next</li>
+            <li>Click on "Use an existing virtual hard drive file" browse to your .vmdk linux image file, choose it, and then click "Create"</li>
+          </ol>
+
+          <h4>Sign up for an AWS account</h4>
+          Sign up for your <a href="http://aws.amazon.com/">AWS account</a>.
+
+          <h3>3. Tutorial component of seminar</h3>
+
+          <h4>AWS Preparation</h4>
+          <ol>
+            <li>Sign into AWS</li>
+            <li>At the top right, your account name should be there, click on the drop down menu beside it and select "US West (Oregon)".</li>
+            <li>Go to the main Amazon Web Services Page, if you're not sure click on the cube looking object at the top left of the screen.</li>
+            <li>Look for the name "EC2" under the Compute category and press it.</li>
+            <li>Scroll down the left side bar panel to find "Key Pairs" under the Network and Security category, and then click on "Key Pairs".</li>
+            <li>Click "Create Key Pair" button at the top.
+            <li>Type in a Key pair name, say "seminar-key" is fine</li>
+            <li>Download the "seminar-key.pem" file and store it somewhere convenient. I have saved in /home/user/tutorial/seminar-key.pem</li>
+            <li>Navigate to the folder containing the .pem file, and execute the following command: "chmod 600 seminar-key.pem". This step ensures that you are the only one who can access this file.</li>
+          </ol>
+          
+          <h4>Creating the cluster</h4>
+          <ol>
+            <li>Go back to the home page by clicking on the cube object at the top left.</li>
+            <li>Click on "EMR" under the Analytics category.</li>
+            <li>Click on "Create Cluster".</li>
+            <li>Enter a name for the "Cluster name" field for example "tutorial"</li>
+            <li>Uncheck the "Logging" box.</li>
+            <li>In the Software Configuration section, pick the AMI version to be 2.4.2, and remove Hive and Pig under the "Applications to be installed"</li>
+            <li>Under Hardware Configuration, choose Master node to be m1.medium under "General Purpose (Previous Generation)" and Core node to be m1.medium or m1.small.</li>
+            <li>Under "Security and Access", select the EC2 key pair to be the name of the pem file, for example, seminar-key.pem.</li>
+            <li>Scroll down to the very bottom and click "Create Cluster"</li>
+          </ol>
+          
+          <h4>Connecting to the cluser</h4>
+          <ol>
+            <li>Start up a terminal</li>
+            <li>Navigate to the directory with the seminar-key.pem file</li>
+            <li>Run the following command where "ec2-XX-XX-XXX-XXX..." is the name of the server you're going to connect to. It can be found at the "Master Public DNS" field at the page where you created your cluster or under "Cluster List".
+              <br>
+              <strong>ssh -o "ServerAliveInterval 10" -i seminar-key.pem hadoop@ec2-XX-XX-XXX-XXX.us-west-2.compute.amazonaws.com</strong>
+            </li>
+          </ol>
+
+          <h4>Running map-reduce</h4>
+          <ol>
+            <li>Once you have connected successfully, clone the following repository to get the data and scripts for this tutorial by using the following command:
+              <br>
+              <strong>git clone https://github.com/kenlau177/Student-Seminar</strong>
+            </li>
+            <li>Navigate to the directory of the cloned repository</li> 
+            <li>Create a directory in the hadoop distributed file system (HDFS) by executing:
+              <br>
+              <strong>hadoop fs -mkdir /user/hadoop</strong>
+            </li>
+            <li>Create an input directory in HDFS:
+              <br>
+              <strong>hadoop fs -mkdir /user/hadoop/myinput</strong>
+            </li>
+            <li>Put stream-data.txt into the input directory in HDFS:
+              <br>
+              <strong>hadoop fs -put stream-data.txt /user/hadoop/myinput</strong>
+            </li>
+            <li>Run the map-reduce job</li>
+              <strong>hadoop jar /home/hadoop/contrib/streaming/hadoop-streaming-1.0.3.jar -mapper mapper.py -reducer reducer.py -file mapper.py -file reducer.py -input /user/hadoop/myinput -output /user/hadoop/joboutput</strong>
+            </li>
+            <li>Copy the files from HDFS to server.
+              <br>
+              <strong>hadoop fs -copyToLocal /user/hadoop/joboutput part-00000</strong>
+            </li>
+            <li>Copy the results from server to local computer by running the following command from the local computer.
+              <br>
+              <strong>scp -o "ServerAliveInterval 10" -i seminar-key.pem hadoop@ec2-XX-XX-XXX-XXX.us-west-2.compute.amazonaws.com</strong>
+            </li>
+          </ol>
+        </section>  
+        <br></br>
+      </div>
+    </div>
+    
+  </body>
+</html>
