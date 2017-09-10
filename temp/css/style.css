@@ -1,0 +1,292 @@
+body {
+  background-color: #545454;
+}
+
+.btn-small {
+	width: 100px;
+	border-radius: 5px;
+	background-color: green;
+	color: #fff;
+}
+
+.btn-wide {
+  width: 180px;
+  background-color: green;
+  color: #fff;
+}
+
+.prog_dropdowns {
+	display: inline-block;
+	margin-left: 10px;
+	margin-right: 10px;
+	width: 160px;
+}
+
+.point {
+  fill: #FFC8CD;
+}
+
+.curve {
+  stroke: #D90036;
+  stroke-width: 4;
+}
+
+.axis .domain { 
+  display: none;
+}
+
+.axis.x line {
+  shape-rendering: crispEdges;
+  stroke: #333;
+  stroke-width: 2;
+}
+
+.axis.x.minor line {
+  stroke: #ccc;
+  stroke-width: 1;
+}
+
+.axis-rule {
+  shape-rendering: crispEdges;
+  stroke: #e0e0e0;
+}
+
+.axis-rule.zero {
+  stroke-width: 2;
+  stroke: #000;
+}
+
+.line {
+  fill-opacity: 0;
+  stroke-width: 4;
+  stroke: #C10000;
+}
+
+.spinner {
+  width: 100px;
+}
+
+.spinner input {
+  text-align: right;
+}
+
+.input-group-btn-vertical {
+  position: relative;
+  white-space: nowrap;
+  width: 1%;
+  vertical-align: middle;
+  display: table-cell;
+}
+
+.input-group-btn-vertical > .btn {
+  display: block;
+  float: none;
+  width: 100%;
+  max-width: 100%;
+  padding: 8px;
+  margin-left: -1px;
+  position: relative;
+  border-radius: 0;
+}
+
+.input-group-btn-vertical > .btn:first-child {
+  border-top-right-radius: 4px;
+}
+
+.input-group-btn-vertical > .btn:last-child {
+  margin-top: -2px;
+  border-bottom-right-radius: 4px;
+}
+
+.input-group-btn-vertical i{
+  position: absolute;
+  top: 0;
+  left: 4px;
+}
+
+.scrollable-menu {
+  height: auto;
+  max-height: 200px;
+  overflow-x: hidden;
+}
+
+.terminal_vendor_count {
+  text-align: right;
+  font-size: 30px;
+  color: white;
+  margin: 0px; 
+}
+
+.terminal_vendor_title {
+  text-align:right; font-size:10px; color:white; margin:0px;
+}
+
+rect.bordered {
+  stroke: #bbb;
+  stroke-width:3px;   
+}
+
+text.mono {
+  font-size: 9pt;
+  font-family: verdana;
+  fill: #aaa;
+}
+
+.square {
+  opacity: 0.5;
+}
+
+.square:hover {
+  opacity: 1.0;
+}
+
+.d3-tip {
+  font-family: Verdana;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 8px;
+  color: #fff; 
+  z-index: 5070;
+}
+
+#earnings_panel tbody tr:hover {
+  cursor: pointer;
+  text-decoration: line-through;
+}
+
+.popup {
+  position: relative;
+}
+
+.popup .popup_text {
+  visibility: hidden;
+  display: none;
+  font-size: 12px;
+  background-color: black;
+  left: 60px;
+  bottom: 30px;
+  position:absolute;
+  border-radius: 10px;
+  padding-right: 5px;
+  z-index: 1000;
+}
+
+.popup .popup_text::after {
+  content: " ";
+  position: absolute;
+  top: 100%; /* At the bottom of the tooltip */
+  left: 10%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+.panel-heading:hover .popup .popup_text { 
+  display: block;
+  visibility: visible;
+}
+
+#vlt_site_map {
+  height: 400px;
+}
+
+/* Leaflet Marker Cluster */
+.marker-cluster {
+  background-clip: padding-box;
+  border-radius: 20px;
+}
+.marker-cluster div {
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+  margin-top: 5px;
+
+  text-align: center;
+  border-radius: 15px;
+  font: 12px "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+.marker-cluster span {
+  line-height: 20px;
+}
+.marker-cluster-red1 {
+  background-color: #ff0000;
+}
+.marker-cluster-red2 {
+  background-color: #ff6666;
+  opacity: .3;
+}
+.marker-cluster-red3 {
+  background-color: #ffb2b2;
+}
+.marker-cluster-green1 {
+  background-color: #006600;
+}
+.marker-cluster-green2 {
+  background-color: #4ca64c;
+}
+.marker-cluster-green3 {
+  background-color: #b2d8b2;
+}
+/*************/
+
+.nav-image {
+  padding: 1px;
+  border: 2px solid #fff;
+}
+
+.nav-image:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.panel-body  {
+  word-break:break-all
+}
+
+.selected {
+  background-color: #ffff99 !important; 
+}
+
+.panel-title {
+  font-size: 14px;
+}
+
+.input-lg {
+  font-size: 14px;
+  height: 32px;
+}
+
+.col-md-2 {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.col-md-10 {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.huge {
+  font-size: 40px;
+}
+
+.panel {
+  margin-bottom: 10px;
+}
+
+.table td {
+  text-align: center;   
+}
+
+.table th {
+  text-align: center;   
+}
+
+#overview_descriptions {
+  padding-left: 20px;
+  cursor: pointer;
+}
+
+#overview_descriptions_list {
+  display: none;
+}

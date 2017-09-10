@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    
+    <!-- Fonts -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/theme.default.css" />
+    
+    <!-- Graphing-->
+    <script src="js/d3.min.js"></script>
+    <script type="text/javascript" src="js/c3.min.js"></script>
+    <link rel="stylesheet" href="css/c3.min.css">
+
+    <!-- Table sorter -->
+    <script src="js/jquery.tablesorter.js"></script>
+    <script type="text/javascript" src="js/jquery.tablesorter.scroller.js"></script>
+    <script type="text/javascript" src="js/jquery.tablesorter.widgets.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">        
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <!-- Bootstrap multi-select -->
+    <script type="text/javascript" src="js/bootstrap-multiselect.js"></script>
+    <link rel="stylesheet" href="css/bootstrap-multiselect.css" type="text/css"/>
+
+    <!-- Bootstrap calendar -->
+    <script type="text/javascript" src="js/bootstrap-datepicker.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap-datepicker.min.css" type="text/css"/>
+
+    <!-- Cool font for the title -->
+    <link href='https://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="css/style.css" />
+
+  </head>
+  <body>
+
+    <center>
+      <div class="row" id="top_panel" style="margin-top:30px;">
+        <div class="col-sm-2">
+        </div>
+        <div class="col-sm-8">
+          <h1 style="display:inline; color: white;">VLT Addons/Removals Impact Monitoring</h1>
+        </div>
+        <div class="col-sm-2">
+        </div>
+      </div> 
+      <div class="row" style="margin: 0px 10px 0px 10px;">
+        <hr>
+      </div>
+    </center>
+    
+    <div class="row" style="margin: 0px 22px 0px 22px;">
+      <center><h2 id="overview_title" style="color:#fff;">&mdash; OVERVIEW VLT ADDONS (LAST 12 MONTHS*) &mdash;</h2></center>
+      <div class="panel panel-primary">
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="panel panel-default">
+                <div class="panel-heading" style="padding: 3px">
+                  <center><h3 style="margin: 5px">Casino</h3></center>
+                </div>
+                <div class="panel-body" style="padding: 10px">
+                  <div class="col-md-12" style="padding: 3px">
+                    <div class="panel panel-primary" style="margin-bottom: 5px">
+                      <div class="panel-heading" style="padding-left: 5px; padding-right: 5px;">
+                        <div class="row">
+                          <div class="col-xs-6 text-center">
+                            <div class="casino_success huge" style="color: #98FB98">NA</div>
+                            <div style="font-size: 12px; padding-top: 1px">Success Rate</div>
+                          </div>
+                          <div class="col-xs-6 text-center">
+                            <div class="casino_incns huge" style="color: #ff7f7f">NA</div>
+                            <div style="font-size: 12px; padding-top: 1px">Incremental NSPTW</div>
+                          </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                          <div class="col-xs-6 text-center">
+                            <div class="casino_sites huge" style="color: #fff">NA</div>
+                            <div style="font-size: 12px; padding-top: 1px">Sites</div>
+                          </div>
+                          <div class="col-xs-6 text-center">
+                            <div class="casino_vlts huge" style="color: #fff">NA</div>
+                            <div style="font-size: 12px; padding-top: 1px">VLTs</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="panel-heading" style="padding-left: 5px; padding-right: 5px; background-color: #998100; border:none;">
+                        <center>
+                          <div class="casino_incns_year huge">NA</div><span>   / Year*</span>
+                        </center>
+                      </div>
+                      <div class="panel-body">
+                        <center><h4>Breakdown</h4></center>
+                        <div class="table">
+                          <table class="table table-bordered table-hover table-striped">
+                            <thead>
+                              <tr>
+                                <th></th>
+                                <th>Sites</th>
+                                <th>VLTs</th>
+                                <th>Inc NSPTW</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>Success</td>
+                                <td id="casino_detail_sites_success">0</td>
+                                <td id="casino_detail_terms_success">0</td>
+                                <td id="casino_detail_nsptw_success">0</td>
+                              </tr>
+                              <tr>
+                                <td>Unsuccess</td>
+                                <td id="casino_detail_sites_unsuccess">0</td>
+                                <td id="casino_detail_terms_unsuccess">0</td>
+                                <td id="casino_detail_nsptw_unsuccess">0</td>
+                              </tr>                              
+                              <tr>
+                                <td>Total</td>
+                                <td id="casino_detail_sites">0</td>
+                                <td id="casino_detail_terms">0</td>
+                                <td id="casino_detail_nsptw">0</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="panel panel-default">
+                <div class="panel-heading" style="padding: 3px">
+                  <center><h3 style="margin: 5px">GEC</h3></center>
+                </div>
+                <div class="panel-body" style="padding: 10px">
+                  <div class="col-md-12" style="padding: 3px">
+                    <div class="panel panel-primary" style="margin-bottom: 5px;">
+                      <div class="panel-heading" style="padding-left: 5px; padding-right: 5px;">
+                        <div class="row">
+                          <div class="col-xs-6 text-center">
+                            <div class="gec_success huge" style="color: #98FB98">NA</div>
+                            <div style="font-size: 12px; padding-top: 3px">Success Rate</div>
+                          </div>
+                          <div class="col-xs-6 text-center">
+                            <div class="gec_incns huge" style="color: #ff7f7f">NA</div>
+                            <div style="font-size: 12px; padding-top: 3px">Incremental NSPTW</div>
+                          </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                          <div class="col-xs-6 text-center">
+                            <div class="gec_sites huge" style="color: #fff">NA</div>
+                            <div style="font-size: 12px; padding-top: 1px">Sites</div>
+                          </div>
+                          <div class="col-xs-6 text-center">
+                            <div class="gec_vlts huge" style="color: #fff">NA</div>
+                            <div style="font-size: 12px; padding-top: 1px">VLTs</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="panel-heading" style="padding-left: 5px; padding-right: 5px; background-color: #998100; border:none;">
+                        <center>
+                          <div class="gec_incns_year huge" style="color: #ff7f7f; display: inline-block;">NA</div><span>   / Year*</span>
+                        </center>
+                      </div>
+                      <div class="panel-body">
+                        <center><h4>Breakdown</h4></center>
+                        <div class="table">
+                          <table class="table table-bordered table-hover table-striped">
+                            <thead>
+                              <tr>
+                                <th></th>
+                                <th>Sites</th>
+                                <th>VLTs</th>
+                                <th>Inc NSPTW</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>Success</td>
+                                <td id="gec_detail_sites_success">0</td>
+                                <td id="gec_detail_terms_success">0</td>
+                                <td id="gec_detail_nsptw_success">0</td>
+                              </tr>
+                              <tr>
+                                <td>Unsuccess</td>
+                                <td id="gec_detail_sites_unsuccess">0</td>
+                                <td id="gec_detail_terms_unsuccess">0</td>
+                                <td id="gec_detail_nsptw_unsuccess">0</td>
+                              </tr>                              
+                              <tr>
+                                <td>Total</td>
+                                <td id="gec_detail_sites">0</td>
+                                <td id="gec_detail_terms">0</td>
+                                <td id="gec_detail_nsptw">0</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="panel panel-default">
+                <div class="panel-heading" style="padding: 3px">
+                  <center><h3 style="margin: 5px">Regular</h3></center>
+                </div>
+                <div class="panel-body" style="padding: 10px">
+                  <div class="col-md-12" style="padding: 3px">
+                    <div class="panel panel-primary" style="margin-bottom: 5px">
+                      <div class="panel-heading" style="padding-left: 5px; padding-right: 5px;">
+                        <div class="row">
+                          <div class="col-xs-6 text-center">
+                            <div class="reg_success huge" style="color: #98FB98">NA</div>
+                            <div style="font-size: 12px; padding-top: 3px">Success Rate</div>
+                          </div>
+                          <div class="col-xs-6 text-center">
+                            <div class="reg_incns huge" style="color: #ff7f7f">NA</div>
+                            <div style="font-size: 12px; padding-top: 3px">Incremental NSPTW</div>
+                          </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                          <div class="col-xs-6 text-center">
+                            <div class="reg_sites huge" style="color: #fff">NA</div>
+                            <div style="font-size: 12px; padding-top: 1px">Sites</div>
+                          </div>
+                          <div class="col-xs-6 text-center">
+                            <div class="reg_vlts huge" style="color: #fff">NA</div>
+                            <div style="font-size: 12px; padding-top: 1px">VLTs</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="panel-heading" style="padding-left: 5px; padding-right: 5px; background-color: #998100; border:none;">
+                        <center>
+                          <div class="reg_incns_year huge" style="color: #ff7f7f; display: inline-block;">NA</div><span>   / Year*</span>
+                        </center>
+                      </div>
+                      <div class="panel-body">
+                        <center><h4>Breakdown</h4></center>
+                        <div class="table">
+                          <table class="table table-bordered table-hover table-striped">
+                            <thead>
+                              <tr>
+                                <th></th>
+                                <th>Sites</th>
+                                <th>VLTs</th>
+                                <th>Inc NSPTW</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>Success</td>
+                                <td id="reg_detail_sites_success">0</td>
+                                <td id="reg_detail_terms_success">0</td>
+                                <td id="reg_detail_nsptw_success">0</td>
+                              </tr>
+                              <tr>
+                                <td>Unsuccess</td>
+                                <td id="reg_detail_sites_unsuccess">0</td>
+                                <td id="reg_detail_terms_unsuccess">0</td>
+                                <td id="reg_detail_nsptw_unsuccess">0</td>
+                              </tr>                              
+                              <tr>
+                                <td>Total</td>
+                                <td id="reg_detail_sites">0</td>
+                                <td id="reg_detail_terms">0</td>
+                                <td id="reg_detail_nsptw">0</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>  
+          <a id="overview_descriptions">* Click Here For Foot Notes</a>
+          <ul id="overview_descriptions_list">
+            <li>Success - Why</li>
+            <li>13 Weeks - Why</li>
+            <li>Yearly net sale is estimated based on weekly</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!--
+    <div class="row" style="margin: 0px 22px 0px 22px;">
+      <center><h3 style="color:#fff;">Overview Detailed:</h3></center>
+      <div class="panel panel-primary">
+        <div class="panel-body">          
+          <table class="table table-bordered table-hover table-striped">
+            <thead>
+              <tr>
+                <th>Site or Terminal</th>
+                <th>Activity</th>
+                <th>Terminals Added/Removed</th>
+                <th>Sites Involved</th>
+                <th>Success %</th>
+                <th>NS Inc Per Month</th>
+                <th>Cannibalization Avg</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    -->
+
+    <div class="row" style="margin: 0px 22px 0px 22px;">
+      <div class="panel panel-primary">
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-3">
+              <center><h3 style="margin-top: 5px;">All Date Filter</h3></center>
+            </div>
+            <div class="col-md-9">
+              <div id="date-container">
+                <div class="input-daterange input-group" id="datepicker">
+                  <input style="font-weight:bold;" type="text" class="input-lg form-control" name="start" />
+                  <span style="font-weight:bold;" class="input-group-addon">to</span>
+                  <input style="font-weight:bold;" type="text" class="input-lg form-control" name="end" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <center><h2 style="color:#fff;">&mdash; FILTER AND DETAILED VIEWS &mdash;</h2></center>
+    </div>    
+    
+    <div class="row" style="margin: 0px 5px 5px 5px;">
+      <div class="row" style="margin: 2px;">
+        <div class="col-md-2">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h5 class="panel-title" data-toggle="tooltip" data-placement="right" title="">Configurations
+              </h5>
+            </div>
+            <div class="panel-body">
+              <h5>Number of Weeks Before/After</h5>
+              <select id="filter_by_month" style="display: none;">
+                <option value="13" selected="selected">13</option>
+                <option value="26">26</option>
+                <option value="39">39</option>
+              </select>
+              <h5>Site:</h5>
+              <select id="filter_by_sites" multiple="multiple" style="display: none;"></select>
+              <h5>Site or Terminal Addon/Removal</h5>
+              <select id="filter_by_addon_type" multiple="multiple" style="display: none;">
+                <option value="site" selected="selected">Site</option>
+                <option value="terminal" selected="selected">Terminal</option>
+              </select>
+              <h5>Acitivty</h5>
+              <select id="filter_by_addon_or_removal" multiple="multiple" style="display: none;">
+                <option value="addon" selected="selected">Addon</option>
+                <option value="removal" selected="selected">Removal</option>
+              </select>
+              <h5>City:</h5>
+              <select id="filter_by_city" multiple="multiple" style="display: none;"></select>
+              <h5>Site Type:</h5>
+              <select id="filter_by_type" multiple="multiple" style="display: none;">
+                <option value="Regular" selected="selected">Regular</option>
+                <option value="GEC" selected="selected">GEC</option>
+                <option value="Casino" selected="selected">Casino</option>
+              </select>
+              <h5>Urban or Rural:</h5>
+              <select id="filter_by_urbanrural" multiple="multiple" style="display: none;">
+                <option value="urban" selected="selected">Urban</option>
+                <option value="rural" selected="selected">Rural</option>
+              </select>
+              <h5>Filter Success Activities:</h5>
+              <select id="filter_by_pat" style="display: none;">
+                <option value="yes">Yes</option>
+                <option value="no" selected="selected">No</option>
+              </select>
+              <h5>Adjust for Seasonality:</h5>
+              <select id="filter_by_adjust" style="display: none;">
+                <option value="yes">Yes</option>
+                <option value="no" selected="selected">No</option>
+              </select>
+            </div>
+          </div>
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title" data-toggle="tooltip" data-placement="right" title="">Downloads
+              </h3>
+            </div>
+            <div class="panel-body">
+              <a target="_blank" href="http://sharepoint/division/LGS/CMI/Analysis/VLT%20Monitoring%20Tool%20for%20Addon%20andRemovals/batch.csv"><h4>Data without Adjustment</h4></a>
+              <br>
+              <a target="_blank" href="http://sharepoint/division/LGS/CMI/Analysis/VLT%20Monitoring%20Tool%20for%20Addon%20andRemovals/batch_adjusted.csv"><h4>Data Adjusted for Seasons</h4></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-10">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 id='filtered_detailed_summary_header' class="panel-title" data-toggle="tooltip" data-placement="right" title="">
+              </h3>
+            </div>
+            <div class="panel-body">
+              <div class="table">
+                <table class="table table-bordered table-hover table-striped">
+                  <thead>
+                    <tr>
+                      <th>Site or Terminal</th>
+                      <th>Activity</th>
+                      <th>Terminals Added/Removed</th>
+                      <th>Sites Activity</th>
+                      <th>Total NS Incremental</th>
+                      <th>NSPTW Incremental</th>
+                      <th>Success Rate</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Site</td>
+                      <td>Add on</td>
+                      <td id="site_addon_terms">0</td>
+                      <td id="site_addon_sites">0</td>
+                      <td id="site_addon_ns">0</td>
+                      <td id="site_addon_nsptw">0</td>
+                      <td id="site_addon_success">&mdash;</td>
+                    </tr>
+                    <tr>  
+                      <td>Site</td>
+                      <td>Removal</td>
+                      <td id="site_removal_terms">0</td>
+                      <td id="site_removal_sites">0</td>
+                      <td id="site_removal_ns">0</td>
+                      <td id="site_removal_nsptw">0</td>
+                      <td id="site_removal_success">&mdash;</td>
+                    </tr>
+                    <tr>  
+                      <td>Terminal</td>
+                      <td>Addon</td>
+                      <td id="terminal_addon_terms">0</td>
+                      <td id="terminal_addon_sites">0</td>
+                      <td id="terminal_addon_ns">0</td>
+                      <td id="terminal_addon_nsptw">0</td>
+                      <td id="terminal_addon_success">0</td>
+                    </tr>
+                    <tr>  
+                      <td>Terminal</td>
+                      <td>Removal</td>
+                      <td id="terminal_removal_terms">0</td>
+                      <td id="terminal_removal_sites">0</td>
+                      <td id="terminal_removal_ns">0</td>
+                      <td id="terminal_removal_nsptw">0</td>
+                      <td id="terminal_removal_success">&mdash;</td>
+                    </tr>
+                    <tr> 
+                      <td align="center" colspan="2">Subtotals / Averages:</td>
+                      <td id="terminals_subtotal">0</td>
+                      <td>&mdash;</td>
+                      <td id="ns_inc_subtotal">0</td>
+                      <td id="nsptw_inc_subtotal">&mdash;</td>
+                      <td id="success_subtotal">&mdash;</td>
+                    </tr>                                         
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-primary">
+            <div class="panel-body">
+              <div id="detailed_res"></div>
+            </div>
+          </div>
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title" data-toggle="tooltip" data-placement="right" title="">Terminals Performance of Individual Addon/Removal
+              </h3>
+            </div>
+            <div class="panel-body" style="padding-bottom:40px;">
+              <table class="table table-bordered" style="width:77%;">
+                <tbody>
+                  <tr>
+                    <td><strong>Site Selected:</strong></td>
+                    <td id="site_selected"></td>
+                    <td><strong>Add/Remove Month:</strong></td>
+                    <td id="trans_date"></td>
+                    <td><strong>Terminals with Activity at the End of Legend</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div id="terminals_performance_ts">
+                <strong>Click On A Row from the Table Above</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="navbar-default">
+      <div class="container">
+        <h3 class="text-uppercase">AGLC Customer and Markerting Insights</h3>
+        <p class="monospaced">
+          &copy;2017
+          <span class="text-uppercase">All Rights Reserved</span></p>
+      </div>
+    </footer>
+
+    <script src="js/build_detailed_res_table.js"></script>
+    <script src="js/build_terminals_performance_ts.js"></script>
+
+    <script type="text/javascript" charset="utf-8">
+
+      var min_date = '2008-02-01';
+      var start_date = '2016-04-24';
+      var end_date = '2017-04-23';
+
+      $('.input-daterange input:eq(0)').datepicker({
+        format: 'yyyy-mm-dd',
+        startDate: min_date,
+        endDate: end_date
+      }).datepicker('setDate', start_date).datepicker('update')
+      .datepicker().on('changeDate', function(e) {
+        $("#detailed_res").empty();
+        build_detailed_res_table();
+        $('#overview_title').text('- OVERVIEW VLT ADDONS (' + $('.input-daterange input:eq(0)').val() + ' to ' + $('.input-daterange input:eq(1)').val() + ')');
+        $('.input-daterange input:eq(1)').datepicker('setStartDate', $(this).val()).datepicker('update');
+      });
+      
+      $('.input-daterange input:eq(1)').datepicker({
+        format: 'yyyy-mm-dd',
+        startDate: start_date,
+        endDate: end_date
+      }).datepicker('setDate', end_date).datepicker('update')
+      .datepicker().on('changeDate', function(e) {
+        $("#detailed_res").empty();
+        build_detailed_res_table();
+        $('#overview_title').text('- OVERVIEW VLT ADDONS (' + $('.input-daterange input:eq(0)').val() + ' to ' + $('.input-daterange input:eq(1)').val() + ')');
+        $('.input-daterange input:eq(0)').datepicker('setEndDate', $(this).val()).datepicker('update');
+      });
+
+      d3.csv("data/sites.csv", function(sites) {
+        for (c in sites) {
+          $('#filter_by_sites').append('<option value="' + sites[c].site + '" selected="selected">' + sites[c].site + '</option>');
+        }
+        /* Initiate bootstrap multi-select plugin */
+        $('#filter_by_sites').multiselect({
+          includeSelectAllOption: true,
+          enableCaseInsensitiveFiltering: true,
+          maxHeight: 250,
+          onDropdownHide: function(e) {
+            $("#detailed_res").empty();
+            build_detailed_res_table();
+          }
+        });
+      }); 
+
+      d3.csv("data/cities.csv", function(cities) {
+        for (c in cities) {
+          $('#filter_by_city').append('<option value="' + cities[c].city + '" selected="selected">' + cities[c].city + '</option>');
+        }
+        /* Initiate bootstrap multi-select plugin */
+        $('#filter_by_city').multiselect({
+          includeSelectAllOption: true,
+          enableCaseInsensitiveFiltering: true,
+          maxHeight: 250,
+          onDropdownHide: function(e) {
+            $("#detailed_res").empty();
+            build_detailed_res_table();
+          }
+        });
+      }); 
+
+      // initialize multi-select for filter by num months
+      $('#filter_by_month').multiselect({
+        includeSelectAllOption: true,
+        enableCaseInsensitiveFiltering: true,
+        maxHeight: 250,
+        onDropdownHide: function(e) {
+          $("#detailed_res").empty();
+          build_detailed_res_table();
+        }
+      });
+
+      // initialize multi-select for filter by addon type
+      $('#filter_by_addon_type').multiselect({
+        includeSelectAllOption: true,
+        enableCaseInsensitiveFiltering: true,
+        maxHeight: 250,
+        onDropdownHide: function(e) {
+          $("#detailed_res").empty();
+          build_detailed_res_table();
+        }
+      });
+
+      $('#filter_by_addon_or_removal').multiselect({
+        includeSelectAllOption: true,
+        enableCaseInsensitiveFiltering: true,
+        maxHeight: 250,
+        onDropdownHide: function(e) {
+          $("#detailed_res").empty();
+          build_detailed_res_table();
+        }
+      });
+
+      // initialize multi-select for filter by site type
+      $('#filter_by_type').multiselect({
+        includeSelectAllOption: true,
+        enableCaseInsensitiveFiltering: true,
+        maxHeight: 250,
+        onDropdownHide: function(e) {
+          $("#detailed_res").empty();
+          build_detailed_res_table();
+        }
+      });
+
+      // initialize multi-select for filter by urban rural
+      $('#filter_by_urbanrural').multiselect({
+        includeSelectAllOption: true,
+        enableCaseInsensitiveFiltering: true,
+        maxHeight: 250,
+        onDropdownHide: function(e) {
+          $("#detailed_res").empty();
+          build_detailed_res_table();
+        }
+      });
+
+      $('#filter_by_pat').multiselect({
+        includeSelectAllOption: true,
+        enableCaseInsensitiveFiltering: true,
+        maxHeight: 250,
+        onDropdownHide: function(e) {
+          $("#detailed_res").empty();
+          build_detailed_res_table();
+        }
+      });
+
+      $('#filter_by_adjust').multiselect({
+        includeSelectAllOption: true,
+        enableCaseInsensitiveFiltering: true,
+        maxHeight: 250,
+        onDropdownHide: function(e) {
+          $("#detailed_res").empty();
+          build_detailed_res_table();
+        }
+      });
+
+      $('#overview_descriptions').on('click', function() {
+        if ($('#overview_descriptions_list').css('display') === 'none') {
+          $('#overview_descriptions_list').css('display', 'block'); 
+        } else {
+          $('#overview_descriptions_list').css('display', 'none');  
+        }
+      });
+
+      build_detailed_res_table();
+
+    </script>
+
+  </body>
+</html>
+
